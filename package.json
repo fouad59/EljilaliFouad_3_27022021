@@ -1,0 +1,19 @@
+{
+  "name": "eljilalifouad_3_27022021",
+  "version": "1.0.0",
+  "description": "Projet Oh my food! Bienvenue dans mon projet Oh my food, étape 3 de la formation developpeur web Openclassrooms. veuillez trouver ci-joint le lien du site: https://fouad59.github.io/EljilaliFouad_3_27022021/",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fouad59/EljilaliFouad_3_27022021.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fouad59/EljilaliFouad_3_27022021/issues"
+  },
+  "homepage": "https://github.com/fouad59/EljilaliFouad_3_27022021#readme"
+}
