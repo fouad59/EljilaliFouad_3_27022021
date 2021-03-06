@@ -2,7 +2,7 @@
 body {
     max-width: 1440px;
     margin: auto;
-    font-family: roboto, sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 title, h1, h5 {
     font-family: Shrikhand, roboto, sans-serif;
@@ -186,16 +186,24 @@ main {
     }
     & li {
         color: #646464;
-        font-size: .8em;
+        font-size: .9em;
+        line-height: 1.6em;
         border: .1em white solid;
         border-radius: 1em;
         box-shadow: .1em .1em .3em lightgray;
         background-color: white;
         margin: .8em .4em;
-        padding: .8em .5em;
+        padding: .6em .8em;
         & .bold {
             font-weight: 900;
             color: black;
+            font-size: 1.2em;
+        }
+        & .bold__price {
+            float: right;
+            margin-right: .6em;
+            color: black;
+            font-weight: 900;
         }
     }
     & button {
