@@ -7,9 +7,6 @@ body {
 title, h1, h5 {
     font-family: Shrikhand, roboto, sans-serif;
 }
-.svg-inline--fa {
-    height: auto;
-}
 h6 {
     float: right;
     margin: 1em 1em -3em 0;
@@ -127,6 +124,7 @@ nav h2 {
     & a:hover {
         border: #F5EDFF;
         background-color: #F5EDFF;
+        height: 4.7em;
         .menu__link {color: #9356DC;}
     }
 }
@@ -162,6 +160,7 @@ section {
         }
         & .card .fa-heart {
             font-size: x-large;
+            margin-top: .5em;
         }
     }
 }
