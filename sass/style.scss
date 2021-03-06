@@ -1,4 +1,7 @@
 @import "libs/reset.scss";
+body {
+    font-family: roboto, sans-serif;
+}
 title, h1, h5 {
     font-family: Shrikhand, roboto, sans-serif;
 }
@@ -28,20 +31,20 @@ h2 {
     font-size: 1.5em;
     font-weight: 500;
 }
-body {
-    font-family: roboto, sans-serif;
-}
 header img {
     display: block;
-    margin: 0.5em auto;
+    margin: 1em auto;
     height: 2em;
 }
 .fa-arrow-left {
     font-size: large;
     color: black;
     position: relative;
-    top: 2em;
+    top: 2.2em;
     left: 1em;
+}
+.main-photo {
+    width: 100%;
 }
 nav {
     margin-bottom: 2em;
@@ -158,6 +161,52 @@ section {
         & .card .fa-heart {
             font-size: x-large;
         }
+    }
+}
+main {
+    position: relative;
+    margin-top: -4em;
+    background-color: #f2f2f2;
+    border-top-left-radius: 2em;
+    border-top-right-radius: 2em;
+    padding: 1.3em .5em;
+    & h1 {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 1em 1em .4em;
+        font-size: 1.5em;
+    }
+    & h4 {
+        margin: 0 0 .5em .6em;
+        color: #646464;
+    }
+    & ul {
+        margin: 1.5em 0 2em 0;
+    }
+    & li {
+        color: #646464;
+        font-size: .8em;
+        border: .1em white solid;
+        border-radius: 1em;
+        box-shadow: .1em .1em .3em lightgray;
+        background-color: white;
+        margin: .8em .4em;
+        padding: .8em .5em;
+        & .bold {
+            font-weight: 900;
+            color: black;
+        }
+    }
+    & button {
+        display: block;
+        margin: 2em auto;
+        border:none;
+        border-radius: 2em;
+        background-color: #9356DC;
+        box-shadow: inset 1em 1em 2em #FF79DA, .1em .1em .3em #9b9b9b;
+        color: white;
+        font-size: 0.9em;
+        padding: 1em 3em;
     }
 }
 footer {
