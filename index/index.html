@@ -7,7 +7,8 @@
     <script src="https://kit.fontawesome.com/42fbe59e45.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet"> 
 </head>
 <body>
@@ -18,52 +19,84 @@
     <nav>
         <form action="#">
             <i class="fas fa-map-marker-alt"></i> 
-            <input type="text" name="Ville" placeholder="Paris, Belleville"/>
+            <input type="text" name="Ville" placeholder="Paris, Belleville" class="champ"/>
         </form>
-        <h1>Réservez le menu qui vous convient</h1>
-        <p>Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
-        <a href="#restaurants">Explorer nos restaurants</a>
-        <h1>Fonctionnement</h1>
-        <ol>
-            <li><i class="fas fa-mobile-alt"></i> Choisissez un restaurant</li>
-            <li><i class="fas fa-list-ul"></i> Composez votre menu</li>
-            <li><i class="fas fa-store"></i> Dégustez au restaurant</li>
-        </ol>
+        <div class="blurb">
+            <h2>Réservez le menu qui vous convient</h2>
+            <p>Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
+            <a href="#restaurants">Explorer nos restaurants</a>
+        </div>
+        <h2>Fonctionnement</h2>
+        <div class="menu">
+            <a href="#"><i class="fas fa-mobile-alt menu__link"></i> Choisissez un restaurant</a>
+            <a href="#"><i class="fas fa-list-ul menu__link"></i> Composez votre menu</a>
+            <a href="#"><i class="fas fa-store menu__link"></i> Dégustez au restaurant</a>
+        </div>
     </nav>
 
     <section>
-        <h1 id="restaurants">restaurants</h1>
-        <a href="palette.html">
-            <img src="../images/la-palette.jpg" alt="La palette du goût" title="La palette du goût">
-            <h2>La palette du goût</h2>
-            <p>Ménilmontant</p>
-        </a>
-        <a href="note.html">
-            <img src="../images/La-note.jpg" alt="La note enchantée" title="La note enchantée">
-            <h2>La note enchantée</h2>
-            <p>Charonne</p>
-        </a>
-        <a href="francaise.html">
-            <img src="../images/francaise.jpg" alt="À la française" title="À la française">
-            <h2>À la française</h2>
-            <p>Cité Rouge</p>
-        </a>
-        <a href="delice.html">
-            <img src="../images/le-delice.jpg" alt="Le délice des sens" title="Le délice des sens">
-            <h2>Le délice des sens</h2>
-            <p>Folie-Méricourt</p>
-        </a>
+        <h2 id="restaurants">Restaurants</h2>
+        <article>
+            <a href="palette.html">
+                <img src="../images/la-palette.jpg" alt="La palette du goût" title="La palette du goût">
+                <h6>Nouveau</h6>
+                <div class="card">
+                    <div class="card__heart">
+                        <h3>La palette du goût</i></h3>
+                        <p>Ménilmontant</p>
+                    </div>
+                    <i class="far fa-heart"></i>
+                </div>
+            </a>
+        </article>
+        <article>
+            <a href="note.html">
+                <img src="../images/La-note.jpg" alt="La note enchantée" title="La note enchantée">
+                <h6>Nouveau</h6>
+                <div class="card">    
+                    <div class="card__heart">
+                        <h3>La note enchantée</i></h3>
+                        <p>Charonne</p>
+                    </div>
+                    <i class="far fa-heart"></i>
+                </div>
+            </a>
+        </article>
+        <article>
+            <a href="francaise.html">
+                <img src="../images/francaise.jpg" alt="À la française" title="À la française">
+                <div class="card"> 
+                    <div class="card__heart">
+                        <h3>À la française</i></h3>
+                        <p>Cité Rouge</p>
+                    </div>
+                    <i class="far fa-heart"></i>
+                </div>
+            </a>
+        </article>
+        <article>
+            <a href="delice.html">
+                <img src="../images/le-delice.jpg" alt="Le délice des sens" title="Le délice des sens">
+                <div class="card">
+                    <div class="card__heart">
+                        <h3>Le délice des sens</i></h3>
+                        <p>Folie-Méricourt</p>
+                    </div>
+                    <i class="far fa-heart"></i>
+                </div>
+            </a>
+        </article>
     </section>
     
     <footer>
-        <img src="../images/ohmyfood.png" alt="logo">
+        <h5>ohmyfood</h5>
         <ul>
             <li>
-                <i class="fas fa-utensils"></i> 
+                <i class="fas fa-utensils foot"></i> 
                 Proposer un restaurant
             </li>
             <li>
-                <i class="fas fa-hands-helping"></i>
+                <i class="fas fa-hands-helping hand"></i>
                 Devenir partenaire
             </li>
             <li>
