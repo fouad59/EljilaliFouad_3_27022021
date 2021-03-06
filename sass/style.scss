@@ -1,5 +1,7 @@
 @import "libs/reset.scss";
 body {
+    max-width: 1440px;
+    margin: auto;
     font-family: roboto, sans-serif;
 }
 title, h1, h5 {
@@ -9,12 +11,12 @@ title, h1, h5 {
     height: auto;
 }
 h6 {
-    position: absolute;
-    margin-top: -12.2em;
-    margin-left: 18.4em;
+    float: right;
+    margin: 1em 1em -3em 0;
+    opacity: .99;
     color: #008766;
     border: .1em #99E2D0 solid;
-    padding: .3em .7em;
+    padding: .2em .5em;
     background-color: #99E2D0;
     border-radius: .2em;
 }
@@ -99,7 +101,7 @@ nav h2 {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    margin-bottom: 3.5em;
+    margin-bottom: auto;
     & a{
         text-decoration: none;
         color: black;
