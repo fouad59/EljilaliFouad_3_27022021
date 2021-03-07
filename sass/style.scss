@@ -52,13 +52,12 @@ nav {
     color: #353535;
 }
 nav form {
-    padding: 0.8em;
-    width: 100%;
-    border: 0.1em #EAEAEA;
+    padding: 1.1em;
+    box-shadow: inset 0 10px 10px -12px #666;
     text-align: center;
     background-color: #EAEAEA;
 }
-.champ {
+input {
     margin-left: 0.8em;
     background-color: #EAEAEA;
     border: none;
@@ -124,7 +123,7 @@ nav h2 {
     & a:hover {
         border: #F5EDFF;
         background-color: #F5EDFF;
-        height: 4.7em;
+        height: 1.7em;
         .menu__link {color: #9356DC;}
     }
 }
@@ -158,9 +157,25 @@ section {
         & .card__heart p {
             font-weight: 300;
         }
-        & .card .fa-heart {
+        & .card .card__heart--regular {
+            display: block;
             font-size: x-large;
             margin-top: .5em;
+            &:hover {
+                display: none;
+                margin-right: -900em;
+            }
+        }
+        & .card .card__heart--solid {
+            display: none;
+            font-size: x-large;
+            margin-top: .5em;
+            &:hover {
+                display: inline-block;
+                font-size: x-large;
+                margin-top: .5em;
+                color: #9356DC;
+            }
         }
     }
 }
@@ -176,6 +191,26 @@ main {
         justify-content: space-between;
         margin: 0 1em 1em .4em;
         font-size: 1.5em;
+    }
+    & .card__heart--regular {
+        display: block;
+        font-size: x-large;
+        margin-top: .5em;
+        &:hover {
+            display: none;
+            margin-right: -900em;
+        }
+    }
+    & .card__heart--solid {
+        display: none;
+        font-size: x-large;
+        margin-top: .5em;
+        &:hover {
+            display: block;
+            font-size: x-large;
+            margin-top: .5em;
+            color: #9356DC;
+        }
     }
     & h4 {
         margin: 0 0 .5em .6em;
@@ -194,6 +229,7 @@ main {
         background-color: white;
         margin: .8em .4em;
         padding: .6em .8em;
+        text-overflow: ellipsis;
         & .bold {
             font-weight: 900;
             color: black;
@@ -216,7 +252,23 @@ main {
         color: white;
         font-size: 0.9em;
         padding: 1em 3em;
+        transition-property: transform;
+        transition-duration: 200ms;
     }
+    & button:hover {
+        transform: scale(1.15);
+    }
+}
+.circle {
+    display: contents;
+    float: inherit;
+    padding: 1.1em;
+    border-top-right-radius: .7em;
+    border-bottom-right-radius: .7em;
+    margin: -1.6em -1em 0 .5em;
+    background-color: #99E2D0;
+    color: white;
+    font-size: 1.5em;
 }
 footer {
     background-color: #353535;

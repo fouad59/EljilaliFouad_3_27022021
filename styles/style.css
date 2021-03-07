@@ -21,11 +21,7 @@ html {
   box-sizing: border-box;
 }
 
-*, *::before, *::after {
-  box-sizing: inherit;
-}
-
-img, video {
+*, video {
   height: auto;
   max-width: 100%;
 }
@@ -107,19 +103,18 @@ nav {
 }
 
 nav form {
-  padding: 0.8em;
-  width: 100%;
-  border: 0.1em #EAEAEA;
+  padding: 1.1em;
+  box-shadow: inset 0 10px 10px -12px #666;
   text-align: center;
   background-color: #EAEAEA;
 }
 
-.champ {
+input {
   margin-left: 0.8em;
   background-color: #EAEAEA;
   border: none;
 }
-.champ::placeholder {
+input::placeholder {
   color: #353535;
   font-size: 1.2em;
 }
@@ -184,7 +179,7 @@ nav h2 {
 .menu a:hover {
   border: #F5EDFF;
   background-color: #F5EDFF;
-  height: 4.7em;
+  height: 1.7em;
 }
 .menu a:hover .menu__link {
   color: #9356DC;
@@ -222,9 +217,25 @@ section article .card__heart h3 {
 section article .card__heart p {
   font-weight: 300;
 }
-section article .card .fa-heart {
+section article .card .card__heart--regular {
+  display: block;
   font-size: x-large;
   margin-top: 0.5em;
+}
+section article .card .card__heart--regular:hover {
+  display: none;
+  margin-right: -900em;
+}
+section article .card .card__heart--solid {
+  display: none;
+  font-size: x-large;
+  margin-top: 0.5em;
+}
+section article .card .card__heart--solid:hover {
+  display: inline-block;
+  font-size: x-large;
+  margin-top: 0.5em;
+  color: #9356DC;
 }
 
 main {
@@ -240,6 +251,26 @@ main h1 {
   justify-content: space-between;
   margin: 0 1em 1em 0.4em;
   font-size: 1.5em;
+}
+main .card__heart--regular {
+  display: block;
+  font-size: x-large;
+  margin-top: 0.5em;
+}
+main .card__heart--regular:hover {
+  display: none;
+  margin-right: -900em;
+}
+main .card__heart--solid {
+  display: none;
+  font-size: x-large;
+  margin-top: 0.5em;
+}
+main .card__heart--solid:hover {
+  display: block;
+  font-size: x-large;
+  margin-top: 0.5em;
+  color: #9356DC;
 }
 main h4 {
   margin: 0 0 0.5em 0.6em;
@@ -258,6 +289,7 @@ main li {
   background-color: white;
   margin: 0.8em 0.4em;
   padding: 0.6em 0.8em;
+  text-overflow: ellipsis;
 }
 main li .bold {
   font-weight: 900;
@@ -280,6 +312,23 @@ main button {
   color: white;
   font-size: 0.9em;
   padding: 1em 3em;
+  transition-property: transform;
+  transition-duration: 200ms;
+}
+main button:hover {
+  transform: scale(1.15);
+}
+
+.circle {
+  display: contents;
+  float: inherit;
+  padding: 1.1em;
+  border-top-right-radius: 0.7em;
+  border-bottom-right-radius: 0.7em;
+  margin: -1.6em -1em 0 0.5em;
+  background-color: #99E2D0;
+  color: white;
+  font-size: 1.5em;
 }
 
 footer {
