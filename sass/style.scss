@@ -84,11 +84,17 @@ input {
         border:none solid;
         border-radius: 2em;
         background-color: #9356DC;
-        box-shadow: inset 1em 1.5em 3em #FF79DA, .1em .1em .3em #9b9b9b;
+        box-shadow: inset .5em .8em 2.5em #FF79DA, .1em .1em .3em #9b9b9b;
         color: white;
         font-size: 0.9em;
         padding: 1em 1.3em;
+        transition: background-color 500ms;
+        &:hover {
+            background-color: lighten(#9356DC, 5);
+            box-shadow: inset .5em .8em 2.5em lighten(#FF79DA, 5), .1em .1em .9em black;;
+        }
     }
+    
 }
 nav h2 {
     margin: 2em 0 1em 0.6em;
@@ -159,22 +165,23 @@ section {
         }
         & .card .card__heart--regular {
             display: block;
-            font-size: x-large;
-            margin-top: .5em;
+            margin-top: 0.04em;
+            font-size: 1.55em;
+            z-index: 100;
             &:hover {
-                display: none;
-                margin-right: -900em;
+                z-index: 0;
+                color: #FF79DA;
             }
         }
         & .card .card__heart--solid {
-            display: none;
-            font-size: x-large;
-            margin-top: .5em;
+            position: absolute;
+            font-size: 1.65em;
+            transition: all 450ms;
+            right: 1.46em;
+            color: white;
             &:hover {
-                display: inline-block;
-                font-size: x-large;
-                margin-top: .5em;
-                color: #9356DC;
+                z-index: 100;
+                color: #FF79DA;
             }
         }
     }
@@ -193,24 +200,25 @@ main {
         font-size: 1.5em;
     }
     & .card__heart--regular {
+        border: black solid;
         display: block;
-        font-size: x-large;
-        margin-top: .5em;
-        &:hover {
-            display: none;
-            margin-right: -900em;
+        font-size: .98em;
+        font-weight: 100;
+        margin-top: .49em;
+        background-color: linear-gradient(0deg, #FF79DA, #9356DC);
+        color: rgb(53, 40, 40);
+        :hover {
+            color: #f2f2f2;
         }
     }
     & .card__heart--solid {
-        display: none;
-        font-size: x-large;
-        margin-top: .5em;
-        &:hover {
-            display: block;
-            font-size: x-large;
-            margin-top: .5em;
-            color: #9356DC;
-        }
+        border: black solid;
+        color: transparent;
+        position: absolute;
+        font-size: 1.07em;
+        right: 1.22em;
+        top: 1.22em;
+        background: transparent;
     }
     & h4 {
         margin: 0 0 .5em .6em;
@@ -218,49 +226,87 @@ main {
     }
     & ul {
         margin: 1.5em 0 2em 0;
+        white-space: nowrap;
     }
     & li {
+        animation: move 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+        overflow: hidden;
         color: #646464;
         font-size: .9em;
         line-height: 1.6em;
-        border: .1em white solid;
         border-radius: 1em;
         box-shadow: .1em .1em .3em lightgray;
         background-color: white;
         margin: .8em .4em;
         padding: .6em .8em;
-        text-overflow: ellipsis;
         & .bold {
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
             font-weight: 900;
             color: black;
             font-size: 1.2em;
         }
         & .bold__price {
             float: right;
-            margin-right: .6em;
             color: black;
             font-weight: 900;
+        }
+        & .bold__text {
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+    }
+    & li:hover {
+        & .box {
+            transform: translate(-69px, 0);
+            & .rond{
+                transform: rotate(0deg);
+            }
+        }
+        & .price {
+            transform: translate(-69px, 0);
+        }
+    }
+    & .price {
+        transition: transform 500ms ease-in-out;
+    }
+    & .box {
+        float: right;
+        padding: 1.1em;
+        border-top-right-radius: .7em;
+        border-bottom-right-radius: .7em;
+        margin: -2.6em -3.9em -.5em .5em;
+        background-color: #99E2D0;
+        font-size: 1.5em;
+        transition: transform 500ms ease-in-out;
+        & .rond {
+            transition: transform 600ms ease-in-out;
+            transform: rotate(-360deg);
+            color: white;
         }
     }
     & button {
         display: block;
+        position: relative;
+        z-index: 1;
+        color: white;
         margin: 2em auto;
+        font-size: 0.9em;
+        padding: 1em 3em;
         border:none;
         border-radius: 2em;
         background-color: #9356DC;
-        box-shadow: inset 1em 1em 2em #FF79DA, .1em .1em .3em #9b9b9b;
-        color: white;
-        font-size: 0.9em;
-        padding: 1em 3em;
-        transition-property: transform;
-        transition-duration: 200ms;
+        box-shadow: inset .3em 1em 2em #FF79DA, .1em .1em .3em #9b9b9b;
+        transition: background-color 250ms;
     }
     & button:hover {
-        transform: scale(1.15);
+        background-color: lighten(#9356DC, 5);
+        box-shadow: inset .3em 1em 2em lighten(#FF79DA, 5), .1em .1em .9em black;
     }
 }
 .circle {
-    display: contents;
     float: inherit;
     padding: 1.1em;
     border-top-right-radius: .7em;
@@ -280,6 +326,9 @@ footer {
     }
     & li {
         margin: .6em 0;
+        & a{
+            color: white;
+        }
     }
     & .foot {
         font-size: .9em;
