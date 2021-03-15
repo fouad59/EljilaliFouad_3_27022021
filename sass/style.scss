@@ -7,7 +7,7 @@ body {
 title, h1, h5 {
     font-family: Shrikhand, roboto, sans-serif;
 }
-h6 {
+.new {
     float: right;
     margin: 1em 1em -3em 0;
     opacity: .99;
@@ -176,7 +176,7 @@ section {
         & .card .card__heart--solid {
             position: absolute;
             font-size: 1.65em;
-            transition: all 450ms;
+            transition: all 1250ms;
             right: 1.46em;
             color: white;
             &:hover {
@@ -370,7 +370,7 @@ footer {
     }
     50% {
         margin-top:1.3em;
-        opacity: 0;
+        opacity: .1;
     }
     to { 
         margin-top: .8em;
