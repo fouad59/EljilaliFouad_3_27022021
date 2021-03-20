@@ -45,10 +45,6 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-.page {
-  animation: erase 3s ease-out;
-}
-
 title, h1, h5 {
   font-family: Shrikhand, roboto, sans-serif;
 }
@@ -276,10 +272,10 @@ main .card__heart--regular {
   z-index: 1;
   transition: opacity 750ms ease-out;
 }
-main .card__heart--regular:hover {
+main .card__heart--regular:hover, main .card__heart--regular:focus {
   opacity: 0;
 }
-main .card__heart--regular:hover + .card__heart--solid {
+main .card__heart--regular:hover + .card__heart--solid, main .card__heart--regular:focus + .card__heart--solid {
   opacity: 1;
   transform: scale(1);
 }
@@ -319,6 +315,9 @@ main li {
   background-color: white;
   margin: 0.8em 0.4em;
   padding: 0.6em 0.8em;
+  animation-name: glissement;
+  animation-duration: 2000ms;
+  animation-timing-function: ease-out;
 }
 main li .plat {
   white-space: nowrap;
@@ -331,33 +330,20 @@ main li .bold {
   font-size: 1.2em;
 }
 main li .bold__price {
-  float: right;
   color: black;
   font-weight: 900;
 }
 main li:nth-child(1) {
-  animation-name: glissement;
-  animation-duration: 2000ms;
   animation-delay: -1s;
-  animation-timing-function: ease-out;
 }
 main li:nth-child(2) {
-  animation-name: glissement;
-  animation-duration: 2000ms;
   animation-delay: -0.7s;
-  animation-timing-function: ease-out;
 }
 main li:nth-child(3) {
-  animation-name: glissement;
-  animation-duration: 2000ms;
   animation-delay: -0.4s;
-  animation-timing-function: ease-out;
 }
 main li:nth-child(4) {
-  animation-name: glissement;
-  animation-duration: 2000ms;
   animation-delay: -0.1s;
-  animation-timing-function: ease-out;
 }
 main li:hover .plat {
   transition-property: all;
@@ -446,12 +432,16 @@ footer .hand {
 }
 
 /* loading-page */
+.page {
+  animation: erase 3s ease-out;
+}
+
 .loader {
   z-index: -1;
   opacity: 0;
   display: flex;
   animation: loading 3s ease-out;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   width: 100%;
@@ -493,6 +483,42 @@ footer .hand {
   animation-delay: 0.8s;
 }
 
+@media all and (min-width: 1024px) {
+  body {
+    margin: auto;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  .menu {
+    display: inline-block;
+    margin: 3em;
+    text-align: center;
+    width: 100%;
+  }
+
+  section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  section h2 {
+    width: 100%;
+  }
+  section article {
+    margin-bottom: 1em;
+    width: 45%;
+  }
+  section article .card .card__heart--solid {
+    position: relative;
+  }
+  section article .card .card__heart--regular {
+    position: absolute;
+    margin-left: 21.3em;
+  }
+}
 @keyframes flash {
   0% {
     color: #99E2D0;

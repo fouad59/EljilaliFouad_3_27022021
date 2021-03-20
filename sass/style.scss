@@ -4,9 +4,6 @@ body {
     margin: auto;
     font-family: 'Roboto', sans-serif;
 }
-.page {
-    animation: erase 3s ease-out;
-}
 title, h1, h5 {
     font-family: Shrikhand, roboto, sans-serif;
 }
@@ -215,10 +212,10 @@ main {
         margin-top: .49em;
         z-index: 1;
         transition: opacity 750ms ease-out;
-        &:hover {
+        &:hover, &:focus {
             opacity: 0;
         }
-        &:hover + .card__heart--solid {
+        &:hover + .card__heart--solid, &:focus + .card__heart--solid {
             opacity: 1;
             transform: scale(1);
         }
@@ -259,6 +256,9 @@ main {
         background-color: white;
         margin: .8em .4em;
         padding: .6em .8em;
+        animation-name: glissement;
+        animation-duration: 2000ms;
+        animation-timing-function: ease-out;
         & .plat {
             white-space: nowrap;
             overflow: hidden;
@@ -270,33 +270,20 @@ main {
             font-size: 1.2em;
         }
         & .bold__price {
-            float: right;
             color: black;
             font-weight: 900;
         }
         &:nth-child(1) {
-            animation-name: glissement;
-            animation-duration: 2000ms;
             animation-delay: -1s;
-            animation-timing-function: ease-out;
         }
         &:nth-child(2) {
-            animation-name: glissement;
-            animation-duration: 2000ms;
             animation-delay: -0.7s;
-            animation-timing-function: ease-out;
         }
         &:nth-child(3) {
-            animation-name: glissement;
-            animation-duration: 2000ms;
             animation-delay: -0.4s;
-            animation-timing-function: ease-out;
         }
         &:nth-child(4) {
-            animation-name: glissement;
-            animation-duration: 2000ms;
             animation-delay: -0.1s;
-            animation-timing-function: ease-out;
         }
     }
     & li:hover {
@@ -386,12 +373,15 @@ footer {
     }
 }
 /* loading-page */
+.page {
+    animation: erase 3s ease-out;
+}
 .loader {
     z-index: -1;
     opacity: 0;
     display: flex;
     animation: loading 3s ease-out;
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     width: 100%;
@@ -430,6 +420,39 @@ footer {
     }
     & .letter:nth-child(8) {
         animation-delay: .8s;
+    }
+}
+@media all and (min-width: 1024px) {
+    body {
+        margin: auto;
+    }
+    h2 {
+        text-align: center;
+    }
+    .menu {
+        display: inline-block;
+        margin: 3em;
+        text-align: center;
+        width: 100%;
+    }
+    section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        & h2 {
+            width: 100%;
+        }
+        & article {
+            margin-bottom: 1em;
+            width: 45%;
+            & .card .card__heart--solid {
+                position: relative;
+            }
+            & .card .card__heart--regular {
+                position: absolute;
+                margin-left: 21.3em;
+            }
+        }
     }
 }
 @keyframes flash {
