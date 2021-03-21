@@ -163,7 +163,6 @@ nav h2 {
 .menu a {
   text-decoration: none;
   color: black;
-  border: #f2f2f2 solid;
   border-radius: 1em;
   padding: 1.5em 1em;
   margin: 0.8em 1.5em;
@@ -174,7 +173,6 @@ nav h2 {
 }
 .menu a::before {
   content: counter(list);
-  border: 1px solid #9356DC;
   border-radius: 50%;
   padding: 0.2rem 0.4rem;
   font-size: small;
@@ -185,7 +183,6 @@ nav h2 {
 .menu a:hover {
   border: #F5EDFF;
   background-color: #F5EDFF;
-  height: 1.7em;
 }
 .menu a:hover .menu__link {
   color: #9356DC;
