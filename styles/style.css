@@ -537,7 +537,7 @@ footer .hand {
   }
   section article .card .card__heart--regular {
     position: relative;
-    margin-inline-start: auto;
+    margin-left: auto;
   }
 
   main {
