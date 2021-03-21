@@ -426,12 +426,15 @@ footer {
     body {
         margin: auto;
     }
+    .main-photo {
+        height: 30em;
+    }
     h2 {
         text-align: center;
     }
     .menu {
         display: inline-block;
-        margin: 3em;
+        margin: 3em auto;
         text-align: center;
         width: 100%;
     }
@@ -446,12 +449,28 @@ footer {
             margin-bottom: 1em;
             width: 45%;
             & .card .card__heart--solid {
-                position: relative;
+                position: static;
+                margin-left: -1em;
             }
             & .card .card__heart--regular {
-                position: absolute;
-                margin-left: 21.3em;
+                position:relative;
+                margin-inline-start: auto;
             }
+        }
+    }
+    main {
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto;
+        margin-top: -7%;
+        width: 90%;
+        & h1 {
+            margin-left: 1em;
+            width: 100%;  
+        }
+        & ul {
+            margin: auto;
+            width: 30%;
         }
     }
 }
