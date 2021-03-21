@@ -481,23 +481,42 @@ footer .hand {
 }
 
 @media all and (min-width: 1024px) {
+  .loader {
+    font-size: 60px;
+  }
+
   body {
     margin: auto;
+  }
+
+  header img {
+    height: 3em;
   }
 
   .main-photo {
     height: 30em;
   }
 
+  nav h2 {
+    margin-left: 2em;
+  }
+
   h2 {
-    text-align: center;
+    margin-left: 1.2em;
+    font-size: 2em;
   }
 
   .menu {
     display: inline-block;
+    white-space: nowrap;
     margin: 3em auto;
     text-align: center;
     width: 100%;
+    font-size: 1.2em;
+  }
+  .menu a {
+    margin: auto;
+    margin-right: 1em;
   }
 
   section {
@@ -536,11 +555,15 @@ footer .hand {
     margin: auto;
     width: 30%;
   }
+
+  footer {
+    padding-left: 3.5em;
+  }
 }
 @keyframes flash {
   0% {
     color: #99E2D0;
-    text-shadow: 0 0 7px #99E2D0;
+    text-shadow: 0 0 10px #FF79DA;
   }
   90% {
     color: #9356DC;
@@ -548,7 +571,7 @@ footer .hand {
   }
   100% {
     color: #99E2D0;
-    text-shadow: 0 0 7px #99E2D0;
+    text-shadow: 0 0 10px #FF79DA;
   }
 }
 @keyframes loading {
