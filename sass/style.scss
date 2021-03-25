@@ -266,11 +266,12 @@ main {
         animation-duration: 2250ms;
         animation-timing-function: ease-out;
         & .plat {
+            width: 90%;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            transition: margin-right;
-            transition-duration: 500ms;
+            transition-property: margin-right;
+            transition-duration: 900ms;
         }
         & .bold {
             font-weight: 900;
@@ -308,7 +309,8 @@ main {
             transform: translate(-69px, 0);
         }
         & .plat {
-            margin-right: 6em;
+            margin-right: 7em;
+            transition-duration: 500ms;
         }
     }
     & .price {

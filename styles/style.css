@@ -321,11 +321,12 @@ main li {
   animation-timing-function: ease-out;
 }
 main li .plat {
+  width: 90%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  transition: margin-right;
-  transition-duration: 500ms;
+  transition-property: margin-right;
+  transition-duration: 900ms;
 }
 main li .bold {
   font-weight: 900;
@@ -361,7 +362,8 @@ main li:hover .price {
   transform: translate(-69px, 0);
 }
 main li:hover .plat {
-  margin-right: 6em;
+  margin-right: 7em;
+  transition-duration: 500ms;
 }
 main .price {
   margin-top: 1.7em;
