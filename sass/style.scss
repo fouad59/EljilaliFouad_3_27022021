@@ -1,8 +1,17 @@
 @import "libs/reset.scss";
+$primary: #9356DC;
+$secondary: #FF79DA;
+$third: #99E2D0;
 body {
     max-width: 1440px;
     margin: auto;
     font-family: 'Roboto', sans-serif;
+}
+.logo {
+    font-family: Shrikhand, roboto, sans-serif;
+    font-size: 2em;
+    margin: auto;
+    text-align: center;
 }
 title, h1, h5 {
     font-family: Shrikhand, roboto, sans-serif;
@@ -12,9 +21,9 @@ title, h1, h5 {
     margin: 1em 1em -3em 0;
     opacity: .99;
     color: #008766;
-    border: .1em #99E2D0 solid;
+    border: .1em $third solid;
     padding: .2em .5em;
-    background-color: #99E2D0;
+    background-color: $third;
     border-radius: .2em;
 }
 a {
@@ -30,16 +39,11 @@ h2 {
     font-size: 1.5em;
     font-weight: 500;
 }
-header img {
-    display: block;
-    margin: 1em auto;
-    height: 2em;
-}
 .fa-arrow-left {
     font-size: large;
     color: black;
     position: relative;
-    top: 2.2em;
+    top: 2em;
     left: 1em;
 }
 .main-photo {
@@ -59,7 +63,7 @@ nav form {
     background-color: #EAEAEA;
 }
 input {
-    margin-left: 0.8em;
+    margin-left: 1em;
     background-color: #EAEAEA;
     border: none;
     &::placeholder{
@@ -84,15 +88,15 @@ input {
     a {
         border:none solid;
         border-radius: 2em;
-        background-color: #9356DC;
-        box-shadow: inset .5em .8em 2.5em #FF79DA, .1em .1em .3em #9b9b9b;
+        background-color: $primary;
+        box-shadow: inset .5em .8em 2.5em $secondary, .1em .1em .3em #9b9b9b;
         color: white;
         font-size: 0.9em;
         padding: 1em 1.3em;
         transition: background-color 500ms;
         &:hover {
-            background-color: lighten(#9356DC, 5);
-            box-shadow: inset .5em .8em 2.5em lighten(#FF79DA, 5), .1em .1em .9em black;;
+            background-color: lighten($primary, 5);
+            box-shadow: inset .5em .8em 2.5em lighten($secondary, 5), .1em .1em .9em black;;
         }
     }
     
@@ -121,7 +125,7 @@ nav h2 {
             padding: 0.2rem 0.4rem;
             font-size: small;
             margin-left: -2.3em;
-            background-color: #9356DC;
+            background-color: $primary;
             color: white;
         }
     }
@@ -129,7 +133,7 @@ nav h2 {
         border: #F5EDFF;
         background-color: #F5EDFF;
         .menu__link {
-            color: #9356DC;
+            color: $primary;
         }
     }
 }
@@ -182,7 +186,7 @@ section {
             position: absolute;
             font-size: 1.55em;
             right: 1.62em;
-            background: -webkit-linear-gradient(#9356dc, #ff79da);
+            background: -webkit-linear-gradient($primary, $secondary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             transform: scale(0.1);
@@ -226,17 +230,20 @@ main {
         opacity: 0;
         font-size: 1.1em;
         color: transparent;
-        background: -webkit-linear-gradient(#9356dc, #ff79da);
+        background: -webkit-linear-gradient($primary, $secondary);
         -webkit-background-clip: text;
         transform: scale(.1);
         transition: transform 500ms ease-in-out;
     }
-    & h4 {
-        margin: 0 0 .5em .6em;
-        color: #646464;
-        border-bottom: .2em #99e2d0 solid;
-        width: 2.7em;
-        padding-bottom: .4em;
+    & .parts {
+        overflow: visible;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+        border-bottom: 0.2em #99e2d0 solid;
+        width: 1.7em;
+        padding-bottom: 0.4em;
+        padding-left: 0;
     }
     & ul {
         overflow: hidden;
@@ -256,12 +263,14 @@ main {
         margin: .8em .4em;
         padding: .6em .8em;
         animation-name: glissement;
-        animation-duration: 2000ms;
+        animation-duration: 2250ms;
         animation-timing-function: ease-out;
         & .plat {
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+            transition: margin-right;
+            transition-duration: 500ms;
         }
         & .bold {
             font-weight: 900;
@@ -273,23 +282,22 @@ main {
             font-weight: 900;
         }
         &:nth-child(1) {
-            animation-delay: -1s;
+            animation-delay: -1.2s;
         }
         &:nth-child(2) {
-            animation-delay: -0.7s;
+            animation-delay: -0.9s;
         }
         &:nth-child(3) {
-            animation-delay: -0.4s;
+            animation-delay: -0.6s;
         }
         &:nth-child(4) {
-            animation-delay: -0.1s;
+            animation-delay: -0.3s;
+        }
+        &:nth-child(5) {
+            animation-delay: 0s;
         }
     }
     & li:hover {
-        & .plat {
-            transition-property: all;
-            width: 67%;
-        }
         & .box {
             transform: translate(-69px, 0);
             & .rond{
@@ -298,6 +306,9 @@ main {
         }
         & .price {
             transform: translate(-69px, 0);
+        }
+        & .plat {
+            margin-right: 6em;
         }
     }
     & .price {
@@ -310,7 +321,7 @@ main {
         border-top-right-radius: .7em;
         border-bottom-right-radius: .7em;
         margin: -2.6em -3.9em -.5em .5em;
-        background-color: #99E2D0;
+        background-color: $third;
         font-size: 1.5em;
         transition: transform 500ms ease-in-out;
         & .rond {
@@ -329,12 +340,12 @@ main {
         padding: 1em 3em;
         border:none;
         border-radius: 2em;
-        background: linear-gradient(#FF79DA, #9356DC);
+        background: linear-gradient($secondary, $primary);
         box-shadow:  .1em .1em .3em #9b9b9b;
         transition: background-color 250ms;
     }
     & button:hover {
-        background: linear-gradient(lighten(#FF79DA, 5), lighten(#9356DC, 5));
+        background: linear-gradient(lighten($secondary, 5), lighten($primary, 5));
         box-shadow: .1em .1em .9em black;
     }
 }
@@ -344,7 +355,7 @@ main {
     border-top-right-radius: .7em;
     border-bottom-right-radius: .7em;
     margin: -1.6em -1em 0 .5em;
-    background-color: #99E2D0;
+    background-color: $third;
     color: white;
     font-size: 1.5em;
 }
@@ -391,7 +402,7 @@ footer {
     align-items: center;
     & .letter {
         font-family: Shrikhand, roboto, sans-serif;
-        color: #9356DC;
+        color: $primary;
         letter-spacing: .3em;
         margin-bottom: 2em;
         animation: flash 1.2s linear infinite;
@@ -494,16 +505,16 @@ footer {
 }
 @keyframes flash {
     0% {
-        color: #99E2D0;
-        text-shadow: 0 0 10px #FF79DA;
+        color: $third;
+        text-shadow: 0 0 10px $secondary;
     }
     90% {
-        color: #9356DC;
+        color: $primary;
         text-shadow: none;
     }
     100% {
-        color: #99E2D0;
-        text-shadow: 0 0 10px #FF79DA;
+        color: $third;
+        text-shadow: 0 0 10px $secondary;
     }
 }
 @keyframes loading {
@@ -515,8 +526,7 @@ footer {
     }
     100% {
         opacity: 0;
-    }
-    
+    }    
 }
 @keyframes erase {
     0% {
@@ -527,8 +537,15 @@ footer {
     }
     100% {
         opacity: 1;
+    }    
+}
+@keyframes ellipse {
+    0% {
+        width: 100%;
     }
-    
+    100% {
+        width: 65%;
+    }
 }
 @keyframes glissement {
     from { 

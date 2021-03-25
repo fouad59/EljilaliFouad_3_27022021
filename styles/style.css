@@ -45,6 +45,13 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+.logo {
+  font-family: Shrikhand, roboto, sans-serif;
+  font-size: 2em;
+  margin: auto;
+  text-align: center;
+}
+
 title, h1, h5 {
   font-family: Shrikhand, roboto, sans-serif;
 }
@@ -76,17 +83,11 @@ h2 {
   font-weight: 500;
 }
 
-header img {
-  display: block;
-  margin: 1em auto;
-  height: 2em;
-}
-
 .fa-arrow-left {
   font-size: large;
   color: black;
   position: relative;
-  top: 2.2em;
+  top: 2em;
   left: 1em;
 }
 
@@ -111,7 +112,7 @@ nav form {
 }
 
 input {
-  margin-left: 0.8em;
+  margin-left: 1em;
   background-color: #EAEAEA;
   border: none;
 }
@@ -239,7 +240,7 @@ section article .card .card__heart--solid {
   position: absolute;
   font-size: 1.55em;
   right: 1.62em;
-  background: -webkit-linear-gradient(#9356dc, #ff79da);
+  background: -webkit-linear-gradient(#9356DC, #FF79DA);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transform: scale(0.1);
@@ -283,17 +284,20 @@ main .card__heart--solid {
   opacity: 0;
   font-size: 1.1em;
   color: transparent;
-  background: -webkit-linear-gradient(#9356dc, #ff79da);
+  background: -webkit-linear-gradient(#9356DC, #FF79DA);
   -webkit-background-clip: text;
   transform: scale(0.1);
   transition: transform 500ms ease-in-out;
 }
-main h4 {
-  margin: 0 0 0.5em 0.6em;
-  color: #646464;
+main .parts {
+  overflow: visible;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
   border-bottom: 0.2em #99e2d0 solid;
-  width: 2.7em;
+  width: 1.7em;
   padding-bottom: 0.4em;
+  padding-left: 0;
 }
 main ul {
   overflow: hidden;
@@ -313,13 +317,15 @@ main li {
   margin: 0.8em 0.4em;
   padding: 0.6em 0.8em;
   animation-name: glissement;
-  animation-duration: 2000ms;
+  animation-duration: 2250ms;
   animation-timing-function: ease-out;
 }
 main li .plat {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  transition: margin-right;
+  transition-duration: 500ms;
 }
 main li .bold {
   font-weight: 900;
@@ -331,20 +337,19 @@ main li .bold__price {
   font-weight: 900;
 }
 main li:nth-child(1) {
-  animation-delay: -1s;
+  animation-delay: -1.2s;
 }
 main li:nth-child(2) {
-  animation-delay: -0.7s;
+  animation-delay: -0.9s;
 }
 main li:nth-child(3) {
-  animation-delay: -0.4s;
+  animation-delay: -0.6s;
 }
 main li:nth-child(4) {
-  animation-delay: -0.1s;
+  animation-delay: -0.3s;
 }
-main li:hover .plat {
-  transition-property: all;
-  width: 67%;
+main li:nth-child(5) {
+  animation-delay: 0s;
 }
 main li:hover .box {
   transform: translate(-69px, 0);
@@ -354,6 +359,9 @@ main li:hover .box .rond {
 }
 main li:hover .price {
   transform: translate(-69px, 0);
+}
+main li:hover .plat {
+  margin-right: 6em;
 }
 main .price {
   margin-top: 1.7em;
@@ -594,6 +602,14 @@ footer .hand {
   }
   100% {
     opacity: 1;
+  }
+}
+@keyframes ellipse {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 65%;
   }
 }
 @keyframes glissement {
